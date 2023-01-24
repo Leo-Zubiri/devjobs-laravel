@@ -34,3 +34,10 @@ Para agregar los campos de la base de datos que necesita breeze para funcionar:
 
 > Breeze configura distintas rutas para trabajar con lo agregado en el frontend. Se pueden consultar las rutas con ```php artisan route:list```
 
+## Modificaciones 
+
+En el caso de modificar el diseño:  **resources/views/auth**
+
+En el caso de modificar las rutas: **routes/auth.php**
+
+En el caso de moficar los controladores: **app/Http/Controllers/Auth**
