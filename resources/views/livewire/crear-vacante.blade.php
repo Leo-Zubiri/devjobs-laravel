@@ -1,4 +1,4 @@
-<form class="md:w-1/2 space-y-5">
+<form class="md:w-1/2 space-y-5" wire:submit.prevent='crearVacante'>
 
     <!-- Email Address -->
     <div>
@@ -12,6 +12,10 @@
             :value="old('titulo')" 
             placeholder="Titulo de la vacante"
         />
+
+        @error('titulo')
+            <livewire:mostrar-alerta :message="$message"/>
+        @enderror
     </div>
 
     <div>
@@ -92,5 +96,10 @@
             wire:model="imagen" 
         />
     </div>
+
+    
+    <x-primary-button class="w-full justify-center">
+        {{ __('Crear Vacante') }}
+    </x-primary-button>
 
 </form>
