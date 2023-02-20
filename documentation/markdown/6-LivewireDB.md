@@ -92,3 +92,37 @@ Desde el error en la vista:
     <livewire:mostrar-alerta :message="$message"/>
 @enderror
 ```
+
+## Subida de archivos livewire
+
+Para habilitar la subida se debe agregar al controlador del componente:
+
+```php
+use Livewire\WithFileUploads;
+
+class CrearVacante extends Component
+{
+
+    public $descripcion;
+    public $imagen;
+
+    use WithFileUploads;
+
+    protected $rules = [
+        'imagen' => 'required|image|max:1024',
+    ];
+    ...
+}
+```
+
+Componente para cargar imagen
+
+```php
+<x-text-input 
+    id="imagen" 
+    class="block mt-1 w-full" 
+    type="file" 
+    wire:model="imagen" 
+    accept="image/*"
+/>
+```
