@@ -30,6 +30,11 @@
                 <option value="{{$salario->id}}">{{$salario->salario}}</option>
             @endforeach
         </select>
+
+        
+        @error('salario')
+            <livewire:mostrar-alerta :message="$message"/>
+        @enderror
     </div>
 
 
@@ -45,6 +50,11 @@
             <option value="{{$categoria->id}}">{{$categoria->categoria}}</option>
         @endforeach
         </select>
+
+        
+        @error('categoria')
+            <livewire:mostrar-alerta :message="$message"/>
+        @enderror
     </div>
 
 
@@ -59,6 +69,10 @@
             :value="old('empresa')" 
             placeholder="Nombre de la empresa"
         />
+
+        @error('empresa')
+            <livewire:mostrar-alerta :message="$message"/>
+        @enderror
     </div>
 
     <div>
@@ -72,6 +86,11 @@
             :value="old('ultimo_dia')" 
             placeholder="Nombre de la empresa"
         />
+
+        
+        @error('ultimo_dia')
+            <livewire:mostrar-alerta :message="$message"/>
+        @enderror
     </div>
 
     <div>
@@ -83,6 +102,11 @@
             placeholder="Descripción general del puesto, experiencia"
             class="rounded-md shadow-sm text-gray-500 mb-2 w-full h-72"
         ></textarea>
+
+        
+        @error('descripcion')
+            <livewire:mostrar-alerta :message="$message"/>
+        @enderror
     </div>
 
 
@@ -95,6 +119,11 @@
             type="file" 
             wire:model="imagen" 
         />
+
+        
+        @error('imagen')
+            <livewire:mostrar-alerta :message="$message"/>
+        @enderror
     </div>
 
     
