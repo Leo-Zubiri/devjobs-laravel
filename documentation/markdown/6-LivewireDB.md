@@ -126,3 +126,23 @@ Componente para cargar imagen
     accept="image/*"
 />
 ```
+
+Mostrar Preview de imagen:
+
+```php
+<x-text-input 
+    id="imagen" 
+    class="block mt-1 w-full" 
+    type="file" 
+    wire:model="imagen" 
+    accept="image/*"
+/>
+
+<div class="my-5 w-80">
+    <!-- Two way data binding -->
+    @if ($imagen)
+        Imagen:
+        <img src="{{$imagen->temporaryUrl()}}" alt="Preview">
+    @endif
+</div>
+```
