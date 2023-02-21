@@ -115,7 +115,7 @@ class CrearVacante extends Component
 }
 ```
 
-Componente para cargar imagen
+`Componente para cargar imagen`
 
 ```php
 <x-text-input 
@@ -145,4 +145,17 @@ Mostrar Preview de imagen:
         <img src="{{$imagen->temporaryUrl()}}" alt="Preview">
     @endif
 </div>
+```
+
+`Almacenar archivo despues de la validación:`
+
+```php
+    public function crearVacante(){
+        $datos = $this->validate();
+
+        // Almacenar la imagen
+        $imagen =  $this->imagen->store('public/vacantes');
+        $nombre_imagen = str_replace('public/vacantes/','',$imagen);
+        ...
+    }
 ```
