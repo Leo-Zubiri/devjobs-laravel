@@ -39,3 +39,7 @@
     @endforelse
 
 </div>
+
+<div class=" mt-10">
+    {{ $vacantes->links() }}
+</div>
