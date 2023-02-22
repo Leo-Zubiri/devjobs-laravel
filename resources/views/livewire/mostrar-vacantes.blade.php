@@ -1,6 +1,6 @@
 <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
 
-    @foreach ($vacantes as $vacante)
+    @forelse ($vacantes as $vacante)
     <div class="p-6 text-gray-900 dark:text-gray-100 md:flex md:justify-between md:items-center">
         <div class="space-y-3">
             <a href="#" class="text-xl font-bold">
@@ -34,6 +34,8 @@
             </a>
         </div>
     </div>    
-    @endforeach
+    @empty
+        <p class="p-3 text-center text-sm text-gray-600">No hay vacantes que mostrar</p>
+    @endforelse
 
 </div>
