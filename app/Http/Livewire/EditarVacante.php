@@ -4,10 +4,19 @@ namespace App\Http\Livewire;
 
 use App\Models\Categoria;
 use App\Models\Salario;
+use App\Models\Vacante;
 use Livewire\Component;
 
 class EditarVacante extends Component
 {
+
+    public $titulo;
+
+    public function mount(Vacante $vacante){
+        // Cuando el componente ha sido instanciado
+        $this->titulo = $vacante->titulo;
+    }
+
     public function render()
     {
         // CONSULTAR OPCIONES DB
