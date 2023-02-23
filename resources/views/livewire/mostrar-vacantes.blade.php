@@ -21,7 +21,7 @@
 
             <a 
                 class="bg-blue-800 py-2 px-4 rounded-lg text-gray-50 text-xs font-bold text-center"
-                href="#"
+                href="{{route('vacantes.edit',$vacante->id)}}"
             >
             EDITAR
             </a>
