@@ -142,7 +142,7 @@
 
     
     <x-primary-button class="w-full justify-center">
-        {{ __('Crear Vacante') }}
+        {{ __('GUARDAR CAMBIOS') }}
     </x-primary-button>
 
 </form>
