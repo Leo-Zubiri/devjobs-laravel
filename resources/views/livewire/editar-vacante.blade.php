@@ -1,4 +1,4 @@
-<form class="md:w-1/2 space-y-5" wire:submit.prevent='crearVacante'>
+<form class="md:w-1/2 space-y-5" wire:submit.prevent='editarVacante'>
 
     <!-- Email Address -->
     <div>
@@ -117,7 +117,7 @@
             id="imagen" 
             class="block mt-1 w-full" 
             type="file" 
-            wire:model="imagen" 
+            wire:model="imagen_nueva" 
             accept="image/*"
         />
 
@@ -126,16 +126,16 @@
             <img src="{{ asset('storage/vacantes/'.$imagen) }}" alt="{{'Imagen Vacante '.$titulo}}">
         </div>
 
-        {{-- <div class="my-5 w-80">
+        <div class="my-5 w-80">
             <!-- Two way data binding -->
-            @if ($imagen)
-                Imagen:
-                <img src="{{$imagen->temporaryUrl()}}" alt="Preview">
+            @if ($imagen_nueva)
+                Imagen Nueva:
+                <img src="{{$imagen_nueva->temporaryUrl()}}" alt="Preview">
             @endif
-        </div> --}}
+        </div>
 
         
-        @error('imagen')
+        @error('imagen_nueva')
             <livewire:mostrar-alerta :message="$message"/>
         @enderror
     </div>
