@@ -81,7 +81,7 @@ class MostrarVacantes extends Component
 ```
 
 
-## Desde Javascript
+## Desde la vista
 
 ```php
     <button 
@@ -91,10 +91,44 @@ class MostrarVacantes extends Component
     </button>
 
     ...
-    
+
     <script> 
         Livewire.on('prueba', (vacante_id) => { 
 
         })
     </script>
+```
+
+## Emitiendo Desde Javascript
+
+```php
+    <script> 
+        Livewire.on('mostrarAlerta', (vacante_id) => { 
+            Swal.fire({
+                title: 'Eliminar Vacante?',
+                ...
+                }).then((result) => {
+                if (result.isConfirmed) {
+
+                    // Eliminar la vacante
+                    Livewire.emit('eliminarVacante',vacante_id)
+
+                    Swal.fire(
+                    'Eliminado!',
+                    'Se ha eliminado correctamente',
+                    'success'
+                    )
+                }
+            })
+        })
+
+    </script>
+
+    ...
+    
+    protected $listeners = ['eliminarVacante'];
+
+    public function eliminarVacante(Vacante $vacante){
+        $vacante->delete();
+    }
 ```
