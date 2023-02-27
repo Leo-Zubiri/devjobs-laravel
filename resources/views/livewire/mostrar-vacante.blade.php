@@ -1,4 +1,4 @@
-<div class="p-10">
+<div class="p-10 ">
    <div class="mb-5"> 
         <h3 class="font-bold text-3xl text-gray-100 my-3">
             {{ $vacante->titulo }}
@@ -20,6 +20,19 @@
             <p class="font-bold text-sm uppercase text-gray-300 my-3">Salario:
                 <span class="normal-case font-normal">{{$vacante->salario->salario}}</span>
             </p>
+        </div>
+   </div>
+
+   <div class="md:grid md:grid-cols-6 gap-4">
+        <div class="md:col-span-2">
+            <img src="{{asset('storage/vacantes/'.$vacante->imagen)}}" alt="Imagen Vacante">
+        </div>
+
+        <div class="md:col-span-4 text-white">
+            <h2 class="text-2xl font-bold mb-5">
+                Descripción del puesto
+            </h2>
+            <p> {{$vacante->descripcion}}</p>
         </div>
    </div>
 </div>
