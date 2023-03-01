@@ -18,3 +18,4 @@ En el archivo de notificacion generado se debe agregar:
 
 y crear una tabla para almacenar:
 
+```php artisan notifications:table```
