@@ -73,3 +73,13 @@ Desde el constructor de la notificacion se establecen los parametros necesarios 
 $this->vacante->reclutador->notify(new NuevoCandidato($this->vacante->id,$this->vacante->titulo,auth()->user()->id));
 
 ```
+
+## Obtener Notificaciones
+
+```php
+    $notificaciones = auth()->user()->unreadNotifications;
+
+    return view('notificaciones.index',[
+        'notificaciones' => $notificaciones,
+    ]);
+```
