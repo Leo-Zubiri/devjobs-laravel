@@ -79,6 +79,9 @@ $this->vacante->reclutador->notify(new NuevoCandidato($this->vacante->id,$this->
 ```php
     $notificaciones = auth()->user()->unreadNotifications;
 
+    // Limpiar notificaciones
+    auth()->user()->unreadNotifications->markAsRead();
+
     return view('notificaciones.index',[
         'notificaciones' => $notificaciones,
     ]);
