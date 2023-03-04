@@ -18,6 +18,7 @@
                     class="bg-slate-50 py-2 px-4 rounded-lg text-gray-700 text-xs font-bold text-center"
                     href="{{route('candidatos.index',$vacante)}}"
                 >
+                {{ $vacante->candidatos->count()}}
                 CANDIDATOS
                 </a>
     
