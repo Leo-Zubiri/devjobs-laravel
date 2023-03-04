@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 
 Route::get('/dashboard', [VacanteController::class,'index'])
     ->middleware(['auth', 'verified'])->name('vacantes.index');
@@ -37,10 +37,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    // Notificaciones
-    Route::get('/notificaciones',NotificacionController::class)->name('notificaciones');
 });
 
-
+// Notificaciones
+Route::get('/notificaciones',NotificacionController::class)->middleware(['auth','verified','rol.reclutador'])->name('notificaciones');
 
 require __DIR__.'/auth.php';
