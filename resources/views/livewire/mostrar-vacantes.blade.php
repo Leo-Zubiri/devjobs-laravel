@@ -16,7 +16,7 @@
             <div class="flex flex-col md:flex-row gap-3 items-stretch mt-5 md:mt-0">
                 <a 
                     class="bg-slate-50 py-2 px-4 rounded-lg text-gray-700 text-xs font-bold text-center"
-                    href="#"
+                    href="{{route('candidatos.index',$vacante)}}"
                 >
                 CANDIDATOS
                 </a>
