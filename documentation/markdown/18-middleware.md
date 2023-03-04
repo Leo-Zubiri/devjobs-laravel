@@ -27,3 +27,5 @@ Route::get('/notificaciones',NotificacionController::class)->middleware(['auth',
 ```
 
 > El policy no permite redireccionar por que genera un codigo 403 de no autorizado, pero un middleware si puede intervenir con el routing
+
+> Si un middleware llega a tener muchos if's es recomendable crear varios middleware para que sea mas facil de mantener

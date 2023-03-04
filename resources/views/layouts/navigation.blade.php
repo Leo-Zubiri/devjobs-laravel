@@ -12,6 +12,7 @@
 
 
                 @auth
+                    @can('create',App\Models\Vacante::class)
                     <!-- Navigation Links -->
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                         <x-nav-link :href="route('vacantes.index')" :active="request()->routeIs('vacantes.index')">
@@ -22,6 +23,7 @@
                             {{ __('Crear Vacante') }}
                         </x-nav-link>
                     </div>
+                    @endcan	
                 @endauth
 
             </div>
@@ -30,7 +32,7 @@
             <div class="hidden sm:flex sm:items-center sm:ml-6">
                 @auth
 
-                @if (auth()->user()->rol === 2)
+                @can('create',App\Models\Vacante::class)
                     <div class="flex items-center gap-1 p-3 mr-2 h-10 bg-indigo-600 hover:bg-indigo-800 rounded-full">
 
                         <a class=" flex flex-col justify-center items-center text-white font-extrabold text-sm" 
@@ -44,7 +46,7 @@
                         
                     </div>
 
-                @endif
+                @endcan
 
                     <x-dropdown align="right" width="48">
                         <x-slot name="trigger">
